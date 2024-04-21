@@ -1,0 +1,70 @@
+//Our Specializations
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        scale: (0);
+        
+    }
+    to {
+        opacity: 1;
+        scale: (1);
+        
+    }
+}
+.spec {
+    &__item {
+        animation-name: fadeIn;
+        animation-fill-mode: both;
+        animation-timing-function: linear;
+        
+        view-timeline-name: --fade-in-img;
+        animation-timeline: --fade-in-img;
+        animation-range: 10% 40%;
+    }
+}
+
+//Our Latest Projects
+@keyframes adjust-position {
+   
+    from {
+        transform: translateY(calc(-100% + 100vh));
+    }
+
+    
+    to {
+        transform: translateY(calc(100% - 100vh));
+    }
+}
+.projects {
+    &__columns {
+        view-timeline-name: --image-reveal;
+        view-timeline-axis: block;
+    }
+    &__column {
+        &-reverse {
+            animation: adjust-position ease-in-out both;
+            animation-timeline: --image-reveal;
+        }
+    }
+}
+//Meet With Our Team
+@keyframes circle-animation {
+    from {
+        mask-size: 0%;
+        
+    }
+    to {
+        mask-size: 150%;
+    }
+}
+.team {
+    &__wrapper {
+        animation-name: circle-animation;
+        animation-fill-mode: both;
+        animation-timing-function: linear;
+        
+        view-timeline-name: --circle-animation-img;
+        animation-timeline: --circle-animation-img;
+        animation-range: 30% 60%;
+    }
+}
